@@ -110,20 +110,39 @@ document.getElementById("q9").innerHTML = "<p>" +"Lauren's appetizer is " + invi
 
 
 // 10. Create an empty object called "jsWorkshop" using Constructor Notation.
+var jsWorkshop =[];
 
 // 11. To your "jsWorkshop" object, assign a key of "classmates" with the value being an array of five your classmates.
-
+ jsWorkshop.classmates =["Nick", "Robert", "Christina", "Hayden", "Jeff"];
 // 12. Get the length of the fourth classmate's name.
 
+document.getElementById("q12").innerHTML = "<p>" + "The length of Hayden's name is: " + jsWorkshop.classmates[3].length + "</p>";
 // 13. Clear the classmates value.
 
+jsWorkshop.classmates =[];
 
-
+document.getElementById("q13").innerHTML = "<p>" + "The classmates are: " + jsWorkshop.classmates + "</p>";
 
 
 
 // ADVANCED TRACK
 // A. Create an empty object called "books".
+var books = {ISBN454545:  {
+                            title: "How I did it",
+                            author: "V Frankenstein",
+                            pages: 300
+                          },
+             ISBN656565:  {
+                            title: "Necronomicon",
+                            author: "Abdul Alhazred",
+                            pages: 214
+                          },
+             ISBN858585:  {
+                            title: "Monster book of Monsters",
+                            author: "Edwardus Lima",
+                            pages: 569,
+                          }
+            }
 
 // B. Create three book objects that contain book titles, their author, and number of pages.
 //     The name of each object should be some kind of made up ISBN number.
@@ -149,12 +168,25 @@ document.getElementById("q9").innerHTML = "<p>" +"Lauren's appetizer is " + invi
     //             }
 
 // C. Access the author of the first book.
+document.getElementById("qc").innerHTML = "<p>" + books.ISBN454545.title + "</p>";
 
 // D. Get the length of the author the the third book.
+document.getElementById("qd").innerHTML = "<p>" + books.ISBN858585.author.length + "</p>";
 
 // E. To each book object variable, add a key of "dateRead" with a value of the year you read the book.
 //     (Go ahead and make this up, too. Get wild.)
+books.ISBN454545.dateRead = "1/1/300";
+books.ISBN656565.dateRead = "11/24/1492";
+books.ISBN858585.dateRead = "a long time ago...";
+document.getElementById("qe").innerHTML += "<p>" + "book read:" + books.ISBN454545.dateRead + "</p>";
+document.getElementById("qe1").innerHTML += "<p>" + "book read:" + books.ISBN656565.dateRead + "</p>";
+document.getElementById("qe2").innerHTML += "<p>" + "book read:" + books.ISBN858585.dateRead + "</p>";
+
+
 
 // F. Remove the second book from the books object.
+splice.books(1,1)
+document.getElementById("qf").innerHTML += "<p>" +"second book read:" + books.ISBN656565.dateRead + "</p>";
 
 // G. Explain, in your own words, the difference between Literal Notation and Constructor Notation.
+// Constructor notation is more flexible and is used when objects need to be manipulated Literal can be used for a static object.
